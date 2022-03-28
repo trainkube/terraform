@@ -22,7 +22,9 @@ jobs:
 
       - name: Terraform Format
         id: fmt
-        run: terraform fmt -check
+        run: | 
+                terraform fmt -check
+                echo '::set-output name=bash_return_Value::$?'
 
       - name: Terraform Init
         id: init
