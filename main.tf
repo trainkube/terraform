@@ -24,11 +24,11 @@ provider "aws" {
 }
 
 
-resource "aws_iam_user" "demouser" {
-  name = "terraformuser"
-  path = "/system/"
+resource "aws_ebs_volume" "example" {
+  availability_zone = "us-east-1a"
+  size              = 10
 
   tags = {
-    name = "terraformuser"
+    Name = "TerraformVolume"
   }
 }
